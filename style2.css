@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+body{
+    margin: 0;
+    height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar{
+    height: 12vh;
+    background-color: #1c2d9c;
+    display: flex;
+}
+
+.ticket-container{
+    height: 88vh;
+    background-color: #f2f2f2;
+    position: relative;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.filter-container,
+.add-delete-container
+{
+    height: 8vh;
+    margin-top: 2vh;
+    margin-left: 8vw;
+    border-radius: 2px;
+    background-color: #a5d3ee;
+}
+
+.filter-container{
+    width: 18vw;
+    display: flex;
+}
+.title-container{
+    height: 8vh;
+    margin-top: 0vh;
+    margin-left: 15vw;
+   
+}
+h1 {
+    display: inline-block;
+    color: white;
+    font-family: 'Righteous', serif;
+    font-size: 2.5rem; 
+  
+    text-shadow: .03em .03em 0 hsla(23040%,50%,1);
+    }
+    h1:after {
+        content: attr(data-shadow);
+        position: absolute;
+        top: .06em; left: .06em;
+        z-index: -1;
+        text-shadow: none;
+        background-image:
+          linear-gradient(
+            45deg,
+            transparent 45%,
+            hsla(48,20%,90%,1) 45%,
+            hsla(48,20%,90%,1) 55%,
+            transparent 0
+            );
+        background-size: .05em .05em;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      
+        animation: shad-anim 15s linear infinite;
+        }
+    
+  
+  @keyframes shad-anim {
+    0% {background-position: 0 0}
+    0% {background-position: 100% -100%}
+    }
+
+.add-delete-container{
+    margin-left: 20rem;
+    width: 9vw;
+    display: flex;
+}
+
+.filter {
+    height: 100%;
+    width: 25%;
+}
+
+.red-color-btn,
+.green-color-btn,
+.yellow-color-btn,
+.black-color-btn {
+    display: block;
+    width: 40%;
+    height: 40%;
+    border-radius: 3px;
+    margin-left: calc(4.5vw * 0.3);
+    margin-top: calc(8vh * 0.3);
+}
+
+.red-color-btn, .modal-red-filter, .ticket-color-red{
+    background-color: red;
+}
+
+.green-color-btn, .modal-green-filter, .ticket-color-green{
+    background-color: green;
+}
+
+.yellow-color-btn, .modal-yellow-filter, .ticket-color-yellow{
+    background-color: yellow;
+}
+
+.black-color-btn, .modal-black-filter, .ticket-color-black{
+    background-color: black;
+}
+
+.filter:hover{
+    background-color: rgb(4, 55, 58);
+    cursor: pointer;
+}
+.filter.active{
+    background-color: rgb(7, 76, 80);
+    box-shadow: 1px 1px 3px 1px rgb(0, 23, 24);
+}
+
+.add, .delete {
+    height: 100%;
+    width: 50%;
+}
+
+.action-btn{
+    display: block;
+    width: 40%;
+    height: 40%;
+    border-radius: 3px;
+    margin-left: calc(4.5vw * 0.3);
+    margin-top: calc(8vh * 0.3);
+    background-color: antiquewhite;
+    padding-left: 3%;
+
+}
+
+.add:hover, .delete:hover{
+    background-color:  rgb(4, 55, 58);
+    cursor: pointer;
+}
+
+.modal{
+    box-shadow: 0 0 20px 5px grey;
+    height: 18rem;
+    width: 35rem;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    top: 10rem;
+    left : calc((100vw - 35rem) / 2) ;
+}
+
+.task-to-be-added{
+    width: 70%;
+    height: 100%;
+    padding: 3rem;
+    outline: none;
+    overflow: auto;
+}
+
+.modal-priority-list{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #1c2d9c;
+}
+
+.modal-filter{
+    width: 100%;
+    height: 20%;
+}
+
+.modal-filter:hover{
+    box-shadow: 0 0 2px 2px;
+    cursor: pointer;
+}
+
+.modal-filter.active{
+    border: 5px solid white;
+    box-shadow: 0 0 2px 1px;
+}
+
+.ticket{
+    height: 9rem;
+    width: 16rem;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+.ticket-color{
+    height: 6%;
+    width: 100%;
+}
+
+.ticket-id{
+    height: 15%;
+    width: 100%;
+    padding: 3%;
+    color: gray;
+}
+
+.task{
+    height: 79%;
+    width: 100%;
+    padding: 3%;
+}
+
+.ticket.active{
+    box-shadow: 1px 1px 5px 1px;
+}
